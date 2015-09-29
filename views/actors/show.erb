@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movie Catalog</title>
+  </head>
+  <body>
+    <h1><%= actor.name %></h1>
+    <table>
+      <tr>
+        <th>Movie Title</th>
+        <th>Character</th>
+        <th>Year</th>
+      </tr>
+      <% actor.movies.each do |movie| %>
+      <tr>
+        <td><a href="/movies/<%= movie.id %>"><%= movie.title %></a></td>
+        <td><%= movie.character %></td>
+        <td><%= movie.year %></td>
+      </tr>
+      <% end %>
+  </table>
+  </body>
+</html>

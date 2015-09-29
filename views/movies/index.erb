@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movie Catalog</title>
+  </head>
+  <body>
+    <h1>Movie List</h1>
+    <a href="/actors">List of Actors</a>
+    <a href="/movies">Order By Title</a>
+    <a href="/movies?order=year">Order By Year</a>
+    <a href="/movies?order=rating">Order By Rating</a>
+
+    <%= erb :'movies/search' %>
+
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Rating</th>
+        <th>Genre</th>
+        <th>Studio</th>
+      </tr>
+      <% movies.each do |movie| %>
+        <tr>
+          <td><a href="/movies/<%= movie.id %>"><%= movie.title %></a></td>
+          <td><%= movie.year %></td>
+          <td><%= movie.rating %></td>
+          <td><%= movie.genre %></td>
+          <td><%= movie.studio %></td>
+        </tr>
+      <% end %>
+    </table>
+  </body>
+</html>
